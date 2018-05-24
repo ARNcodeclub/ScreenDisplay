@@ -24,6 +24,10 @@ html{
   flex-direction: column;
 }
 
+#admin-form input[type=radio]{
+  margin: 7px 0;
+}
+
 #welcome{
   text-align: center;
   font-weight: bold;

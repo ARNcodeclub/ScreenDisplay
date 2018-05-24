@@ -19,7 +19,7 @@ $reqUserDispo->execute();
 ?>
 
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<htmL lang="fr" dir="ltr">
   <head>
     <!-- <meta http-equiv="refresh" content="5"> -->
     <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
@@ -32,31 +32,19 @@ $reqUserDispo->execute();
     <script type="text/javascript" src="templates/js/jquery.js"></script>
     <?php if (!empty($_GET['id'])) { ?>
     <script type="text/javascript">
-      var refreshId = setInterval(function()
-      {
-        $('#banner-title').load('user/derniermot.php?id=<?= $getid ?>');
-      }, 900);
+    var refreshId = setInterval(function()
+    {
+      // $('#banner-article').reload();
+      $('#banner-article').load('user/derniercolor.php?id=<?= $getid ?> div');
+    }, 500);
     </script>
     <?php } ?>
     <link rel="stylesheet" href="templates/css/style.css">
   </head>
   <body>
-    <?php if (!empty($_GET['id'])) {
-          // $bg_color = "413939";
-          // $txt_shadow_color = "262121";
-          if ($getid == 1) {
-            $bg_color = "3498db";
-            $txt_shadow_color = "2980b9";
-          }else if ($getid == 2) {
-            $bg_color = "2ecc71";
-            $txt_shadow_color = "27ae60";
-          }
-      ?>
-      <div id="banner-article" style="background-color: #<?= $bg_color ?>;">
-          <!-- <img id="image" src="templates/img/<?php // echo $Image['nom'] ?>" /> -->
-          <p id="banner-title" style="text-shadow: -4px 4px #<?= $txt_shadow_color ?>;"><?= $Image['valeur'] ?></p>
+      <div id="banner-article" style="background-color: <?= $Image['couleur'] ?>;">
+          <p id="banner-title"><?= $Image['valeur'] ?></p>
       </div>
-    <?php } ?>
     <p id="cestquandmememoiquiaittoutfaitxD">Développé par @ilio Discepoli - 5F - 2018 - ARNCodeClub &copy; - T'as de bons yeux tu sais ?</p>
   </body>
 </html>
